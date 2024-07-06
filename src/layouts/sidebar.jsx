@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Home } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -42,6 +42,10 @@ const Sidebar = () => (
       </div>
       <div className="flex-1">
         <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
+          <SidebarNavLink to="/" key="csv-management">
+            <Home className="h-4 w-4" />
+            CSV Management
+          </SidebarNavLink>
           {navItems.map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
               {item.icon}
@@ -71,6 +75,10 @@ const MobileSidebar = () => (
           <Package2 className="h-6 w-6" />
           <span className="sr-only">Acme Inc</span>
         </NavLink>
+        <SidebarNavLink to="/" key="csv-management-mobile">
+          <Home className="h-4 w-4" />
+          CSV Management
+        </SidebarNavLink>
         {navItems.map((item) => (
           <SidebarNavLink key={item.to} to={item.to}>
             {item.title}
